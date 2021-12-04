@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Project Page</title>
+</head>
+<body>
+
+<h3>My Project Page</h3>
+<div><p> AIML Converter</p></div>
+<form method = "POST" enctype="multipart/form-data" action="{% url 'upload' %}">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" name="Submit" value="Submit">
+</form>
+
+<form method="POST" class="inline" action="{% url 'download' %}">
+  {% csrf_token %}
+  <p>{{text|safe }}</p>
+</form>
+
+
+</body>
+</html>
